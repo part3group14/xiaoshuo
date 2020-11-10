@@ -1,0 +1,16 @@
+[
+        PageTypeList:{
+            "PageTypeId":"1",            "文章类型ID"
+            "PageTypeName":"海风",       "文章类型"
+            "PageTypeAuthor"            "作者"
+            "PageType":"xxx",           "文章类型"
+            "PageTypeOrder":"xxx",      "排序"
+            "PageTypedescription":    "描述"
+            "PageTypetime":"xxxxx",    "加入时间"
+            "cstatus":"1"               "显示状态  显示为1，隐藏为0"
+        }
+        msg:{
+            status:200
+            msg:请求成功
+        }
+    ]

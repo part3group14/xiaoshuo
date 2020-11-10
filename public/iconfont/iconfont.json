@@ -1,0 +1,86 @@
+{
+  "id": "2170656",
+  "name": "后台管理",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12640965",
+      "name": "删除筛选项",
+      "font_class": "delete",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "2139742",
+      "name": "上",
+      "font_class": "shang-copy",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "5176572",
+      "name": "项目管理",
+      "font_class": "xiangmuguanli",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "6448135",
+      "name": "上",
+      "font_class": "up",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "6669913",
+      "name": "公告",
+      "font_class": "gonggao",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "7344668",
+      "name": "文章管理",
+      "font_class": "wenzhangguanli",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "12571122",
+      "name": "轮播",
+      "font_class": "lunbo",
+      "unicode": "e65a",
+      "unicode_decimal": 58970
+    },
+    {
+      "icon_id": "12810896",
+      "name": "menu",
+      "font_class": "menu",
+      "unicode": "e640",
+      "unicode_decimal": 58944
+    },
+    {
+      "icon_id": "13755873",
+      "name": "评论管理",
+      "font_class": "pinglunguanli",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "13810129",
+      "name": "信息",
+      "font_class": "xinxi",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "14277665",
+      "name": "分类管理",
+      "font_class": "fenleiguanli",
+      "unicode": "e949",
+      "unicode_decimal": 59721
+    }
+  ]
+}
