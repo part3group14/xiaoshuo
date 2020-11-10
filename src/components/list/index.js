@@ -1,4 +1,5 @@
 import { Table, Tag, Space } from 'antd';
+import './index.css'
 import React from 'react'
 export default class list extends React.Component {
     constructor(props) {
@@ -29,51 +30,51 @@ export default class list extends React.Component {
             ],
             columns: [
                 {
-                    title: 'Name',
+                    title: 'ID',
                     dataIndex: 'name',
                     key: 'name',
-                    render: text => <a>{text}</a>,
                 },
                 {
-                    title: 'Age',
+                    title: '栏目名称',
                     dataIndex: 'age',
                     key: 'age',
                 },
                 {
-                    title: 'Address',
+                    title: '栏目副标题',
                     dataIndex: 'address',
                     key: 'address',
                 },
                 {
-                    title: 'Tags',
-                    key: 'tags',
-                    dataIndex: 'tags',
-                    render: tags => (
-                        <>
-                            {tags.map(tag => {
-                                let color = tag.length > 5 ? 'geekblue' : 'green';
-                                if (tag === 'loser') {
-                                    color = 'volcano';
-                                }
-                                return (
-                                    <Tag color={color} key={tag}>
-                                        {tag.toUpperCase()}
-                                    </Tag>
-                                );
-                            })}
-                        </>
-                    ),
+                    title: '关键词',
+                    dataIndex: 'address',
+                    key: 'address',
                 },
                 {
-                    title: 'Action',
-                    key: 'action',
-                    render: (text, record) => (
-                        <Space size="middle">
-                            <a>Invite {record.name}</a>
-                            <a>Delete</a>
-                        </Space>
-                    ),
+                    title: '栏目缩略图',
+                    dataIndex: 'address',
+                    key: 'address',
                 },
+                {
+                    title: '链接',
+                    dataIndex: 'address',
+                    key: 'address',
+                },
+                {
+                    title: '描述',
+                    dataIndex: 'address',
+                    key: 'address',
+                },
+                {
+                    title: '显示状态',
+                    dataIndex: 'address',
+                    key: 'address',
+                },
+                {
+                    title: '操作',
+                    dataIndex: 'address',
+                    key: 'address',
+                }
+                
             ]
         }
     }

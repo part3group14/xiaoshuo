@@ -3,6 +3,7 @@ import style from './index.module.css'
 import BreadCrumb from '../../components/BreadCrumb/index'
 import Xcolok from '../../components/Xcolok/index'
 import List from '../../components/list/index'
+import {getColumnlist} from '../../api/columnlist'
 export default class ColumnList extends React.Component {
     constructor(props) {
         super(props)
@@ -13,6 +14,10 @@ export default class ColumnList extends React.Component {
                 title3:"栏目列表"
             }
         }
+    }
+    async componentDidMount(){
+        let res = await getColumnlist()
+        console.log(res.data);
     }
     render = () => {
         return (
