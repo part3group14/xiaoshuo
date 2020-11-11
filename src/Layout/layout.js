@@ -93,6 +93,7 @@ export default class layout extends React.Component {
                     </NavList>
                     <div className='right'>
                         <Route path="/" exact component={Dest}/>
+                        <Route path="/index" exact component={Dest}/>
                         <Route path="/colList" component={ColumnList}/>
                         <Route path="/articleTypeList" component={ArticleTypeList}/>
                         <Route path="/articleList" component={ArticleList}/>
