@@ -1,88 +1,47 @@
-import { Table, Tag, Space } from 'antd';
-import './index.css'
-import React from 'react'
+import React from 'react';
+import style from './index.module.css'
+// const [selectionType, setSelectionType] = useState('checkbox');
+import { Table, Radio} from 'antd';
 export default class list extends React.Component {
     constructor(props) {
+        // console.log(props);
         super(props)
         this.state = {
-            data: [
-                {
-                    key: '1',
-                    name: 'John Brown',
-                    age: 32,
-                    address: 'New York No. 1 Lake Park',
-                    tags: ['nice', 'developer'],
-                },
-                {
-                    key: '2',
-                    name: 'Jim Green',
-                    age: 42,
-                    address: 'London No. 1 Lake Park',
-                    tags: ['loser'],
-                },
-                {
-                    key: '3',
-                    name: 'Joe Black',
-                    age: 32,
-                    address: 'Sidney No. 1 Lake Park',
-                    tags: ['cool', 'teacher'],
-                },
-            ],
-            columns: [
-                {
-                    title: 'ID',
-                    dataIndex: 'name',
-                    key: 'name',
-                },
-                {
-                    title: '栏目名称',
-                    dataIndex: 'age',
-                    key: 'age',
-                },
-                {
-                    title: '栏目副标题',
-                    dataIndex: 'address',
-                    key: 'address',
-                },
-                {
-                    title: '关键词',
-                    dataIndex: 'address',
-                    key: 'address',
-                },
-                {
-                    title: '栏目缩略图',
-                    dataIndex: 'address',
-                    key: 'address',
-                },
-                {
-                    title: '链接',
-                    dataIndex: 'address',
-                    key: 'address',
-                },
-                {
-                    title: '描述',
-                    dataIndex: 'address',
-                    key: 'address',
-                },
-                {
-                    title: '显示状态',
-                    dataIndex: 'address',
-                    key: 'address',
-                },
-                {
-                    title: '操作',
-                    dataIndex: 'address',
-                    key: 'address',
-                }
-                
-            ]
+            data:'',
+            columns:''
         }
     }
-
+    componentWillMount(){
+        this.setState({
+            data:this.props.data,
+            columns:this.props.cols
+        })
+        console.log(this.state.data,this.props.cols);
+    }
+    rowSelection = {
+        onChange: (selectedRowKeys, selectedRows) => {
+            console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
+        }
+    };
     render = () => {
         return (
             <div>
-                <Table columns={this.state.columns} dataSource={this.state.data} />
+                <Radio.Group
+                    onChange={({ target: { value } }) => {
+                        // setSelectionType(value);
+                    }}
+                // value={selectionType}
+                >
+
+                </Radio.Group>
+                <Table className={style.table}
+                    pagination={false}
+                    bordered
+                    rowSelection
+                    scroll
+                    columns={this.state.columns} 
+                    dataSource={this.state.data}
+                />
             </div>
         )
     }

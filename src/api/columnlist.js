@@ -4,7 +4,7 @@ import * as axiosBase from './index'
 
 //显示所有栏目
 export function getColumnlist(){
-    return axiosBase.get("/comments")
+    return axiosBase.get("/loadingColList")
 }
 
 //添加文章

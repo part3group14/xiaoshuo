@@ -1,14 +1,11 @@
-import  './layout.css'
-import React from 'react'
-import Time from './time/time'
-import NavList from './Leftnav/Leftnav'
-import {Route} from 'react-router-dom'
-import Home from '../pages/Home/index'
-import ColumnList from '../pages/ColumnList/index'
-import ArticleTypeList from '../pages/ArticleTypeList/index'
-import ArticleList from '../pages/ArticleList/index'
-import PublicType from '../pages/PublicType/index'
-export default class layout extends React.Component {
+import React from 'react';
+import './index.css';
+import LeftSetup from '../../components/leftSetup/leftSetup';
+import Time from '../../components/time/time';
+
+
+export default class index extends React.Component {
+
     constructor() {
         super()
         this.state = {
@@ -40,7 +37,7 @@ export default class layout extends React.Component {
         });
       }
       display=(e)=>{
-        if(e.target.dataset.index === '1'){
+        if(e.target.dataset.index == '1'){
             this.setState({
                 box:'block'
             })
@@ -50,8 +47,7 @@ export default class layout extends React.Component {
             })
         }
       }
-
-      render = () => {
+    render = () => {
         return (
             <div className='k'>
                 <header>
@@ -70,7 +66,7 @@ export default class layout extends React.Component {
                             <Time date={this.state.date}></Time>
                             <li className='xx'><i className='iconfont icon-xinxi'></i></li>
                             <li className='userItem'>
-                                <img src='img/logo.png' alt=" "></img>
+                                <img src='img/logo.png'></img>
                             </li>
                             <li className='admin'>
                                 <a>
@@ -85,21 +81,18 @@ export default class layout extends React.Component {
                     </div>
                 </header>
                 <div className='content'>
-                    <NavList box={this.state.box} display={this.state.display}>
+                    <LeftSetup box={this.state.box} display={this.state.display}>
                         <div className>
                             跳转的组件
                         </div>
-                    </NavList>
+                    </LeftSetup>
                     <div className='right'>
-                        <Route path="/" exact component={Home}/>
-                        <Route path="/colList" component={ColumnList}/>
-                        <Route path="/articleTypeList" component={ArticleTypeList}/>
-                        <Route path="/articleList" component={ArticleList}/>
-                        <Route path="/publicType" component={PublicType}/>
+                        <ul className='navTitle'>
+            
+                        </ul>
                     </div>
                 </div>
             </div>
         )
     }
 }
-
