@@ -66,7 +66,7 @@ export default class Tb extends React.Component {
 
     render = () => {
         return (
-            <div id="weekzxt" className='' style={{ height: 350}}></div>
+            <div id="weekzxt" className='' style={{height: 350}}></div>
         )
     }
 }
