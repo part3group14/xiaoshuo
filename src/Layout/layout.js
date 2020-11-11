@@ -5,6 +5,7 @@ import NavList from './Leftnav/Leftnav'
 import {Route} from 'react-router-dom'
 // import Home from '../pages/Home/index'
 import ColumnList from '../pages/ColumnList/index'
+import Dest from '../pages/Dest/dest.js'
 import ArticleTypeList from '../pages/ArticleTypeList/index'
 import ArticleList from '../pages/ArticleList/index'
 import PublicType from '../pages/PublicType/index'
@@ -91,7 +92,7 @@ export default class layout extends React.Component {
                         </div>
                     </NavList>
                     <div className='right'>
-                        {/* <Route path="/" component={Home}/> */}
+                        <Route path="/" exact component={Dest}/>
                         <Route path="/colList" component={ColumnList}/>
                         <Route path="/articleTypeList" component={ArticleTypeList}/>
                         <Route path="/articleList" component={ArticleList}/>

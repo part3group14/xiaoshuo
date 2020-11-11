@@ -1,0 +1,86 @@
+.dest-body{
+    height:100%;
+    padding: 20px;
+}
+.dest-body-top{
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size:20px;
+    line-height: 22px;
+    border-left: 5px solid #2fb9d4;
+    border-radius: 0 2px 2px 0;
+    background-color: #f2f2f2;
+}
+
+.dest-body-top>span{
+    padding:0 5px;
+}
+
+.loginTime{
+    color:rgb(255, 87, 34)
+}
+
+.row>ul{
+   display: flex;
+}
+.row>ul li{
+   display: flex;
+   flex-direction: column;
+   padding:0 15px;
+}
+
+.Fright{
+    /* display: inline-block; */
+    font-size: 30px;
+    display: block;
+    color:rgb(255, 87, 34)
+}
+.Fright div{
+    width:88px;
+    height:88px;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Fright-w{
+    font-size:12px;
+    margin-top:10px;
+}
+
+.allNum{
+    color:rgb(226, 226, 226);
+    border:none;
+    border-top:1px solid rgb(226, 226, 226);
+}
+.allNum>span{
+    position: relative;
+    color:rgb(154, 154, 154);
+    top:-17px;
+    left:35px;
+    font-size:20px;
+    padding:0 10px;
+    background-color: #fff;
+}
+.weekTitle{
+    font-size:14px;
+    line-height: 41px;
+    position: relative;
+    top:-15px;
+    color: rgb(70, 70, 70);
+}
+
+.bg{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.tbnum{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.bg> .dest-body-top{
+    height:41px;
+    background-color: #fff;
+}
