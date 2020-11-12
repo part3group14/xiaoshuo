@@ -1,0 +1,33 @@
+.box{
+    height: 48px;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.left{
+    margin-bottom: 10px;
+    padding: 5px;
+    line-height: 22px;
+    border-radius: 0 2px 2px 0;
+    margin-top: 10px;
+  
+}
+.right{
+    line-height: 40px;
+    margin-right: 5px;
+}
+.badge{
+    height: 18px;
+    line-height: 18px;
+    position: relative;
+    display: inline-block;
+    padding: 0 6px;
+    font-size: 12px;
+    text-align: center;
+    background-color: #FF5722;
+    color: #fff;
+    border-radius: 2px;
+    margin: 0 5px;
+}

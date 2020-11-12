@@ -11,18 +11,8 @@ export default class list extends React.Component {
             columns:''
         }
     }
-    componentWillMount(){
-        this.setState({
-            data:this.props.data,
-            columns:this.props.cols
-        })
-        console.log(this.state.data,this.props.cols);
-    }
-    rowSelection = {
-        onChange: (selectedRowKeys, selectedRows) => {
-            console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
-        }
-    };
+
+ 
     render = () => {
         return (
             <div>
@@ -39,8 +29,8 @@ export default class list extends React.Component {
                     bordered
                     rowSelection
                     scroll
-                    columns={this.state.columns} 
-                    dataSource={this.state.data}
+                    columns={this.props.cols} 
+                    dataSource={this.props.data}
                 />
             </div>
         )

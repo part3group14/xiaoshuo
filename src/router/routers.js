@@ -1,9 +1,10 @@
 //路由配置
-import Home from '../pages/Home/index'
 import ColumnList from '../pages/ColumnList/index'
+import Dest from '../pages/Dest/dest.js'
 import ArticleTypeList from '../pages/ArticleTypeList/index'
 import ArticleList from '../pages/ArticleList/index'
 import PublicType from '../pages/PublicType/index'
+import ClassifiedManagement from '../pages/ClassifiedManagement/ClassifiedManagement.js'
 export default [
     {
         title:"首页",
@@ -29,6 +30,10 @@ export default [
         title:"公告类型",
         path:"/publicType",
         component:PublicType
+    },
+    {
+        title:"分类管理",
+        path:"/classifiedManagement",
+        component:ClassifiedManagement
     }
-    
 ]

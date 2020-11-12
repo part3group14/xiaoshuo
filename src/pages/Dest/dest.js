@@ -4,23 +4,29 @@ import axios from 'axios'
 import Tb from '../../components/tb/Tb.js'
 import Bintu from '../../components/bintu/Bintu'
 import BarChart from '../../components/BarChart/BarChart'
+// import {desk} from '../../qingqiu/classfied.js'
 export default class Dest extends React.Component {
 
     constructor(props) {
         super()
         this.state = {
-            users:[],
-            isLoaded:false,
-            content:'',
-            loginTime:''
+            users: [],
+            isLoaded: false,
+            content: '',
+            loginTime: '',
+            admin:'',
+            board:''
         }
     }
-    
-    async componentDidMount(){        
-        let res=await axios.get('http://localhost:3000/data');
+
+    async componentDidMount() {
+        let res = await axios.get('http://39.104.52.111:8006/desk_data');
+        console.log(res.data.user)
         this.setState({
-            content:res.data[0].content,
-            loginTime:res.data[0].time
+            content: res.data.user.content,
+            loginTime: res.data.user.time,
+            admin:res.data.user.admin_num,
+            board:res.data.user.board_num
         })
     }
 
@@ -37,42 +43,44 @@ export default class Dest extends React.Component {
                 <div className='row'>
                     <ul>
                         <li>
-                            <img src='img/huiyuan.png' />
+                            <div><img alt='title' src='img/huiyuan.png' /></div>
                             <div className='Fright'>
                                 <div>
-                                    <span>23</span>
+                                    <span>{this.state.admin}</span>
                                     <span className='Fright-w'>会员总数</span>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <img src='img/youqing.png' />
+                            <div><img alt='title' src='img/youqing.png' /></div>
+
                             <div className='Fright'>
                                 <div>
                                     <span>20</span>
                                     <span className='Fright-w'>友情连接</span>
                                 </div>
                             </div>
-                        </li> 
+                        </li>
                         <li>
-                            <img src='img/wenzhang.png' />
+                            <div><img alt='title' src='img/wenzhang.png' /></div>
                             <div className='Fright'>
                                 <div>
                                     <span>242</span>
                                     <span className='Fright-w'>文章总数</span>
                                 </div>
                             </div>
-                        </li> 
+                        </li>
                         <li>
-                            <img src='img/gonggao.png' />
+                            <div><img alt='title' src='img/gonggao.png' /></div>
+
                             <div className='Fright'>
                                 <div>
-                                    <span>23</span>
+                                    <span>{this.state.board}</span>
                                     <span className='Fright-w'>公告总数</span>
                                 </div>
                             </div>
-                        </li>     
-                    </ul>  
+                        </li>
+                    </ul>
                 </div>
                 <div className='allNum'>
                     <span>数据统计</span>
@@ -83,19 +91,19 @@ export default class Dest extends React.Component {
                             <div className='dest-body-top'>
                                 <span className="weekTitle">一周统计</span>
                             </div>
-                            <Tb/>
+                            <Tb />
                         </li>
                         <li className='bg'>
                             <div className='dest-body-top'>
                                 <span className="weekTitle">文章类型统计</span>
                             </div>
-                            <Bintu/>
+                            <Bintu />
                         </li>
                         <li className='bg'>
                             <div className='dest-body-top'>
                                 <span className="weekTitle">文章年度统计</span>
                             </div>
-                            <BarChart/>
+                            <BarChart />
                         </li>
                     </ul>
                 </div>
