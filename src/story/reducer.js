@@ -1,19 +1,18 @@
 // 这里面是对state的操作
 export default function(state,action){
-    let {type} = action;
+    let {type,payload} = action;
     switch(type){
         case "add":
             return {
-                // ...state,
+                ...state,
                 num:state.num+1
+            }
+        ;
+        case "getclassFiedId":
+            return{
+                ...state,
+                classFiedId:payload
             };
-        case "j":
-            return {
-            // ...state,
-            num:state.num-1
-        };
-        case "datax":
-            
         default:
             break;
     }

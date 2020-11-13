@@ -1,10 +1,11 @@
 import React from 'react'
 import style from './index.module.css'
+import axiox from 'axios'
 import BreadCrumb from '../../components/BreadCrumb/index'
 import Xcolok from '../../components/Xcolok/index'
 import List from '../../components/list/index'
 import { EditOutlined, DownloadOutlined,DeleteOutlined} from '@ant-design/icons';
-import { Table, Radio, Button ,Space} from 'antd';
+import {Button ,Space} from 'antd';
 import Time from '../../components/Time/index'
 // import {getColumnlist} from '../../api/columnlist'
 export default class ColumnList extends React.Component {
@@ -19,7 +20,7 @@ export default class ColumnList extends React.Component {
             data: [
                 {
                     key: '3',
-                    PageTypeID: '3',
+                    uid: '3',
                     UserName: "六分",
                     Sex: '男',
                     Phone:'15615591651651',
@@ -31,37 +32,37 @@ export default class ColumnList extends React.Component {
             columns:[
                 {
                     title: 'ID',
-                    dataIndex: 'PageTypeID',
+                    dataIndex: 'uid',
                     align:"center"
                 },
                 {
                     title: '用户名',
-                    dataIndex: 'UserName',
+                    dataIndex: 'user_name',
                     align:"center"
                 },
                 {
                     title: '性别',
-                    dataIndex: 'Sex',
+                    dataIndex: 'sex',
                     align:"center"
                 },
                 {
                     title: '手机',
-                    dataIndex: 'Phone',
+                    dataIndex: 'phone',
                     align:"center"
                 },
                 {
                     title: '邮箱',
-                    dataIndex: 'Emial',
+                    dataIndex: 'email',
                     align:"center"
                 },
                 {
                     title:'地址',
-                    dataIndex:'Address',
+                    dataIndex:'address',
                     align:"center"
                 },
                 {
                     title: '加入时间',
-                    dataIndex: 'PageTypeTime',
+                    dataIndex: 'start_time',
                     align:"center"
                 }
                 ,
@@ -85,11 +86,18 @@ export default class ColumnList extends React.Component {
                 }
             ]
         }
+
     }
-    // async componentDidMount(){
-    //     let res = await getColumnlist()
-    //     console.log(res.data);
-    // }
+    async componentDidMount(){
+        let res = await axiox.get('http://39.104.52.111:8006/userList')
+        for(let i=0;i<res.data.msg.length;i++){
+            res.data.msg[i].key=res.data.msg[i].uid
+        }
+        console.log(res.data.msg)
+        this.setState({
+            data:res.data.msg
+        })
+    }
     render = () => {
         return (
             <div className={style.box}>
