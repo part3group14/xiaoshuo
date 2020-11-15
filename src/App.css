@@ -1,4 +1,5 @@
 @import '~antd/dist/antd.css';
+@import './assets/styled/reset.css';
 .App {
     height: 100%;
 }

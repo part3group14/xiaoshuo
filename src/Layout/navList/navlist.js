@@ -1,10 +1,16 @@
 import React from 'react'
-import './navlist.css'
+
+import {Link} from "react-router-dom";
+
 import { Layout, Menu } from 'antd';
+import './navlist.css'
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
+
+
+
 export default class navlist extends React.Component {
 
   constructor(props) {
@@ -77,13 +83,13 @@ export default class navlist extends React.Component {
               <Menu.Item key="21">分享记录</Menu.Item>
             </SubMenu>
             <SubMenu key="sub8" icon={<LaptopOutlined />} title="管理员管理">
-              <Menu.Item key="22">管理员列表</Menu.Item>
-              <Menu.Item key="23">角色管理</Menu.Item>
-              <Menu.Item key="24">权限分类</Menu.Item>
-              <Menu.Item key="25">权限管理</Menu.Item>
+              <Menu.Item key="22"><Link to="/Layout/MangerList">管理员列表</Link></Menu.Item>
+              <Menu.Item key="23"><Link to="/Layout/MangerRole">角色管理</Link></Menu.Item>
+              <Menu.Item key="24"><Link to="/Layout/Classify">权限分类</Link></Menu.Item>
+              <Menu.Item key="25"><Link to="/Layout/AtyManger">权限管理</Link></Menu.Item>
             </SubMenu>
             <SubMenu key="sub9" icon={<NotificationOutlined />} title="系统统计">
-              <Menu.Item key="26">系统统计报表</Menu.Item>
+              <Menu.Item key="26"><Link to="/Layout/Statistical">统计报表</Link></Menu.Item>
             </SubMenu>
             <SubMenu key="sub10" icon={<NotificationOutlined />} title="系统设置">
               <Menu.Item key="27">系统设置</Menu.Item>

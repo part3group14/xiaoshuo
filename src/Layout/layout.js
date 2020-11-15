@@ -2,7 +2,8 @@ import  './layout.css'
 import React from 'react'
 import Time from './time/time'
 import NavList from './Leftnav/Leftnav'
-import ColumnList from '../pages/ColumnList/index'
+
+import Home from './Home'
 export default class layout extends React.Component {
     constructor() {
         super()
@@ -86,7 +87,8 @@ export default class layout extends React.Component {
                         </div>
                     </NavList>
                     <div className='right'>
-                        <ColumnList/>
+                        {/* 展示区 */}
+                        <Home/>
                     </div>
                 </div>
             </div>

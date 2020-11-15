@@ -5,7 +5,7 @@ import { SyncOutlined } from '@ant-design/icons';
 import style from './index.module.css'
 export default class BreadCrumb extends React.Component {
     constructor(props) {
-        console.log(props);
+        // console.log(props);
         super(props)
         this.state = {}
     }

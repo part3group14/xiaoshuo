@@ -57,6 +57,7 @@ header{
 }
 .right{
   position: relative;
+  overflow-y: auto;
   padding-top: 60px;
   float: right;
   box-sizing: border-box;
