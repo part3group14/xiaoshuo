@@ -42,7 +42,6 @@ export default class Del extends React.Component {
 
         
           setTimeout(() => {
-            console.log(this.state.dataList)
             this.props.del(this.state.dataList)
         }, 500);
     }

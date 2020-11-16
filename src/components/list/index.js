@@ -31,6 +31,7 @@ export default class list extends React.Component {
                     scroll
                     columns={this.props.cols} 
                     dataSource={this.props.data}
+      
                 />
             </div>
         )

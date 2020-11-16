@@ -28,7 +28,7 @@ export default class ClassfiedSeach extends React.Component {
             "create_time": "2020-11-12 07:49:59"
             }
         )
-        this.props.add();
+        this.porps.add();
     }
 
     render = () => {

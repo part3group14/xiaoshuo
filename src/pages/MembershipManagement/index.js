@@ -1,6 +1,6 @@
 import React from 'react'
 import style from './index.module.css'
-import axiox from 'axios'
+import axios from 'axios'
 import BreadCrumb from '../../components/BreadCrumb/index'
 import Xcolok from '../../components/Xcolok/index'
 import List from '../../components/list/index'
@@ -15,20 +15,10 @@ export default class ColumnList extends React.Component {
             list:{
                 title1:"首页",
                 title2:"会员管理",
-                title3:"会员列表"
+                title3:"会员列表",
+                num:0
             },
-            data: [
-                {
-                    key: '3',
-                    uid: '3',
-                    UserName: "六分",
-                    Sex: '男',
-                    Phone:'15615591651651',
-                    Emial: '14@mail.com',
-                    Address: "北京市",
-                    PageTypeTime: '2020-02-01 11:11:42',
-                }
-            ],
+            data: [],
             columns:[
                 {
                     title: 'ID',
@@ -76,26 +66,39 @@ export default class ColumnList extends React.Component {
                 {
                     title: '操作',
                     dataIndex: 'operate',
-                    render: () =>
+                    render: (text,record) =>
                         <Space>
                             <DownloadOutlined style={{cursor:"pointer"}} />
                             <EditOutlined style={{cursor:"pointer"}}/>
-                            <DeleteOutlined style={{cursor:"pointer"}}/>
+                            <DeleteOutlined onClick={()=>this.del(record.uid)} style={{cursor:"pointer"}}/>
                         </Space>
             
                 }
             ]
         }
-
+        this.getList=this.getList.bind(this);
+        this.del=this.del.bind(this);
     }
-    async componentDidMount(){
-        let res = await axiox.get('http://39.104.52.111:8006/userList')
+    componentWillMount(){
+        this.getList();
+    }
+    async del(id){
+        let res=await axios({
+            method:'DELETE',
+            url:`http://39.104.52.111:8006/deleteUser`,
+            data:id
+        })
+        this.getList();
+    }
+    async getList(){
+        let res = await axios.get('http://39.104.52.111:8006/userList')
         for(let i=0;i<res.data.msg.length;i++){
             res.data.msg[i].key=res.data.msg[i].uid
         }
-        console.log(res.data.msg)
+
         this.setState({
-            data:res.data.msg
+            data:res.data.msg,
+            num:res.data.msg.length
         })
     }
     render = () => {
@@ -104,11 +107,11 @@ export default class ColumnList extends React.Component {
                 <div className={style.cnav}>
                     <BreadCrumb list={this.state.list}/>
                 </div>
-                <div>
-                    <Time/>
+                <div className={style.top}>
+                    {/* <Time/> */}
                 </div>
                 <div className={style.cbody}>
-                    <Xcolok />
+                    <Xcolok num={this.state.num} add={this.getList} />
                     <List data={this.state.data} cols={this.state.columns}/>
                 </div>
             </div>

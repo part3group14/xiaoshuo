@@ -11,6 +11,7 @@ export default class Edit extends React.Component {
             visible: false,
             id: 0
         }
+        this.fn=this.fn.bind(this);
     }
 
     componentWillReceiveProps() {
@@ -20,7 +21,7 @@ export default class Edit extends React.Component {
         });
     }
  
-    async fn(id, x) {
+    async fn(id,x) {
         await axios({
             headers:{
                 "book-type-id": id
@@ -34,9 +35,11 @@ export default class Edit extends React.Component {
                 "status": 0
             }
         })
-        setTimeout(() => {
-            window.location.reload();
-        }, 500);
+        // setTimeout(() => {
+        //     window.location.reload();
+        // }, 500);
+        // console.log(this)
+        this.props.edit();
     }
 
     render = () => {
