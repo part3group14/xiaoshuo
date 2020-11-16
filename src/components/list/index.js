@@ -4,6 +4,7 @@ import style from './index.module.css'
 import { Table, Radio} from 'antd';
 export default class list extends React.Component {
     constructor(props) {
+        // console.log(props);
         super(props)
         this.state = {
             data:'',

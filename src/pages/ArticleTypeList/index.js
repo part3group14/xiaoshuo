@@ -51,7 +51,6 @@ export default class ColumnList extends React.Component {
                     title: '状态',
                     dataIndex: 'status',
                     render: () => <Button type="primary">已启用</Button>
-
                 }
                 ,
                 {
