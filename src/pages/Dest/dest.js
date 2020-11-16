@@ -21,7 +21,6 @@ export default class Dest extends React.Component {
 
     async componentDidMount() {
         let res = await axios.get('http://39.104.52.111:8006/desk_data');
-        console.log(res.data.user)
         this.setState({
             content: res.data.user.content,
             loginTime: res.data.user.time,

@@ -13,6 +13,11 @@ export default function(state,action){
                 ...state,
                 classFiedId:payload
             };
+        case "getlist":
+            return{
+                ...state,
+                dataList:payload
+            }
         default:
             break;
     }

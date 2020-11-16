@@ -4,7 +4,7 @@ import {Input} from 'antd'
 import axios from 'axios'
 import { Button} from 'antd';
 import { PlusCircleOutlined} from '@ant-design/icons';
-export default class Time extends React.Component {
+export default class ClassfiedSeach extends React.Component {
     constructor(props) {
         super()
         this.state = {
@@ -20,13 +20,15 @@ export default class Time extends React.Component {
     }
     async add(){
         await axios.post('http://39.104.52.111:8006/addPageTypeList',
-            {"type_name": this.state.x,
+            {
+            "type_name": this.state.x,
             "up_type": "string",
             "des_type": "string",
             "status": 0,
             "create_time": "2020-11-12 07:49:59"
             }
         )
+        this.props.add();
     }
 
     render = () => {
