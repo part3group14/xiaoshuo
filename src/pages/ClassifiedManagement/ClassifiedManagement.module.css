@@ -1,0 +1,15 @@
+.cnav{
+    padding: 0 20px;
+    height: 40px;
+    /* background-color: skyblue; */
+    /* background-color: #2fb9d4; */
+    line-height: 40px;
+    border-bottom: 1px solid rgb(229, 229, 229);
+}
+.cbody{
+    padding: 20px;
+    height: 400px;
+    margin-top: 12px;
+    /* background-color: pink; */
+    /* overflow-y: auto; */
+}
